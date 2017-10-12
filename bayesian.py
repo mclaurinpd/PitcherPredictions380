@@ -1,3 +1,10 @@
-print("bayesian")
-print("the answer is",2+2)
-print("test")
+import numpy as np
+import scipy as sp
+
+HOFList = [[era-, fip-, babip]]
+
+goodList = [[era-, fip-, babip]]
+
+badList = [[era-, fip-, babip]]
+
+
