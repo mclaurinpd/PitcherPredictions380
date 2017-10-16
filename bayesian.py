@@ -8,3 +8,4 @@ goodList = [[era-, fip-, babip]]
 badList = [[era-, fip-, babip]]
 
 def loadDataSet():
+	print("hello")
