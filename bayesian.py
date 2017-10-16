@@ -9,3 +9,4 @@ badList = [[era-, fip-, babip]]
 
 def loadDataSet():
 	print("hello")
+	return Null
