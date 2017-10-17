@@ -1,0 +1,8 @@
+Given three sets of pitchers (Shof, Sgood, Sbad) where each element is a 3-d vector consisting of a pitcher's average Earned Run Average-, Fielding Independent Pitching-, and WHIP from their 25-31 age season.
+
+Define me!
+Earned run: 
+Park Factor:
+FIP = ((13*HR)+(3*(BB+HBP))-(2*K))/IP + constant
+ERA = (ER*9)/IP, ERA- = (ERA + (ERA-(ERA*Park Factor)))/(AL or NL (ERA))
+
