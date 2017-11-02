@@ -21,8 +21,5 @@ def main():
 	file = os.getcwd() + "\\HOFSet.txt"
 	allPitchers =[]
 	loadData(file,allPitchers)
-	for x in allPitchers:
-		x.__str__()
-		print()
 
 main()
