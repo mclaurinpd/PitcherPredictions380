@@ -1,4 +1,3 @@
-Name,WHIP,ERA-,FIP-
 A.J. Burnett,1.25,86,82
 Aaron Cook,1.41,89,95
 Aaron Harang,1.31,96,91

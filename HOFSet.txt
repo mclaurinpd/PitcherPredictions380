@@ -1,4 +1,3 @@
-Name,WHIP,ERA-,FIP-
 Sandy Koufax,1,67,68
 Jim Palmer,1.17,78,94
 Tom Seaver,1.12,79,85

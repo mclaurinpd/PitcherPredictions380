@@ -1,8 +1,8 @@
 class Pitcher:
 	Name = ""
-	WHIP = 0
-	ERAminus = 0
-	FIPminus = 0
+	WHIP = 0.0
+	ERAminus = 0.0
+	FIPminus = 0.0
 
 	def __init__(self, name, whip, ERAminus, FIPminus):
 		self.Name = name

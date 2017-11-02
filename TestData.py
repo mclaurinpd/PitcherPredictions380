@@ -10,9 +10,9 @@ def loadCSV(file,list):
 	for row in spamreader:
 		tokens = row.split(',')
                 name = tokens[0]
-		whip = tokens[1]
-		era = tokens[2]
-		fip = tokens[3]
+		whip = float(tokens[1])
+		era = float(tokens[2])
+		fip = float(tokens[3])
 		pitcher = Pitcher(name,whip,era,fip)
 		list.append(pitcher)
 
