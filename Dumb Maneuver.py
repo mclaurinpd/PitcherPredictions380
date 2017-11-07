@@ -66,15 +66,15 @@ def hofData(dataset, std, mean):
 def hofQualify(hofSTD, hofMean, allPitchers, hofResults):
     'Used 1/4 std deviation for top of the elite players'
     for Pitcher in allPitchers:
-        if (Pitcher.WHIP) > hofMean[0] - hofSTD[0]/4 and Pitcher.WHIP < hofMean[0] + hofSTD[0]/4:
-            if Pitcher.FIPminus > hofMean[1]-hofSTD[1]/4 and Pitcher.FIPminus < hofMean[1] + hofSTD [1]/4:
-                if Pitcher.ERAminus > hofMean[2]- hofSTD[2]/4 and Pitcher.ERAminus + hofSTD[2]/4:
+        if (Pitcher.WHIP) > hofMean[0] - hofSTD[0]/7 and Pitcher.WHIP < hofMean[0] + hofSTD[0]/7:
+            if Pitcher.FIPminus > hofMean[1]-hofSTD[1]/7 and Pitcher.FIPminus < hofMean[1] + hofSTD [1]/7:
+                if Pitcher.ERAminus > hofMean[2]- hofSTD[2]/7 and Pitcher.ERAminus + hofSTD[2]/7:
                     hofResults.append(Pitcher.Name)
 
 
 def main():
     file = os.getcwd() + "\\HOFSet.txt"
-    file2 = os.getcwd() + "\\AllPitcherSet.txt"
+    file2 = os.getcwd() + "\\MillionPitchers.txt"
     hofPitchers = []
     allPitchers = []
     newHof = []
