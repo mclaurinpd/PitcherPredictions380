@@ -9,7 +9,7 @@ def main():
     file = open(fileName,'w')
     for i in range(0,1000000):
         names = randomword(10)
-        whip = math.ceil(random.uniform(1.10,1.50)*100)/100
+        whip = math.ceil(random.normalvariate(1.10,1.50)*100)/100
         fip = random.randint(50,150)
         era = random.randint(50,150)
         pitcher = str(str(names)+","+str(whip)+","+str(era)+","+str(fip))

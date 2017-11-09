@@ -73,8 +73,8 @@ def hofQualify(hofSTD, hofMean, allPitchers, hofResults):
 
 
 def main():
-    file = os.getcwd() + "\\HOFSet.txt"
-    file2 = os.getcwd() + "\\AllPitcherSet.txt"
+    file = os.getcwd() + "/HOFSet.txt"
+    file2 = os.getcwd() + "/AllPitcherSet.txt"
     hofPitchers = []
     allPitchers = []
     newHof = []

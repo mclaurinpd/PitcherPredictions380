@@ -109,7 +109,7 @@ def getAccuracy(testSet, predictions):
 
 def main():
         #training is the all pitcher list, test is the HOF
-        trainingfilename = 'AllPitcherSet.csv'
+        trainingfilename = 'AllPitcherSet.txt'
         testfilename = 'HOFSet.csv'
         trainingdataset = loadCsv(trainingfilename)
         testdataset = loadCsv(testfilename)
