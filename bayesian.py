@@ -7,18 +7,11 @@ import time
 
 def loadCsv(filename):
 
-    with open(filename) as csvfile:
-        reader = csv.reader(csvfile, delimiter=',')
-        dataset = list(reader)
-        for row in reader:
-            print (row)
+    lines = csv.reader(open(filename, 'r'))
+    dataset = list(lines)
+    for i in range(len(dataset)):
+    	dataset[i] = [float(x) for x in dataset[i]]
     return dataset
-
-    #lines = csv.reader(open(filename, 'rb'))
-    #dataset = list(lines)
-    #for i in range(len(dataset)):
-    #	dataset[i] = [float(x) for x in dataset[i]]
-    #return dataset
 
 
 def splitDataset(dataset, splitRatio):
@@ -60,7 +53,7 @@ def summarize(dataset):
 def summarizeByClass(dataset):
     separated = separateByClass(dataset)
     summaries = {}
-    for classValue, instances in separated.iteritems():
+    for classValue, instances in separated.items():
         summaries[classValue] = summarize(instances)
     return summaries
 
@@ -72,7 +65,7 @@ def calculateProbability(x, mean, stdev):
 
 def calculateClassProbabilities(summaries, inputVector):
     probabilities = {}
-    for classValue, classSummaries in summaries.iteritems():
+    for classValue, classSummaries in summaries.items():
         probabilities[classValue] = 1
         for i in range(len(classSummaries)):
             mean, stdev = classSummaries[i]
@@ -84,7 +77,7 @@ def calculateClassProbabilities(summaries, inputVector):
 def predict(summaries, inputVector):
     probabilities = calculateClassProbabilities(summaries, inputVector)
     bestLabel, bestProb = None, -1
-    for classValue, probability in probabilities.iteritems():
+    for classValue, probability in probabilities.items():
         if bestLabel is None or probability > bestProb:
             bestProb = probability
             bestLabel = classValue
@@ -108,22 +101,20 @@ def getAccuracy(testSet, predictions):
 
 
 def main():
-        #training is the all pitcher list, test is the HOF
-        trainingfilename = 'AllPitcherSet.csv'
-        testfilename = 'HOFSet.csv'
-        trainingdataset = loadCsv(trainingfilename)
-        testdataset = loadCsv(testfilename)
-        print('Loaded Training [0] and Hall of Fame Lists [1] into following amounts:',(len(trainingdataset), len(testdataset)))
+        filename = 'bayesianDataNoNames.csv'
+        splitRatio = 0.67
+        dataset = loadCsv(filename)
+        trainingSet, testSet = splitDataset(dataset, splitRatio)
         # prepare model
         print ('Starting timer for Bayesian Classifier')
         start = time.time()
-        summaries = summarizeByClass(trainingdataset)
+        summaries = summarizeByClass(trainingSet)
         # test model
-        predictions = getPredictions(summaries, testdataset)
-        accuracy = getAccuracy(testdataset, predictions)
+        predictions = getPredictions(summaries, testSet)
+        accuracy = getAccuracy(testSet, predictions)
         end = time.time()
         print("The classifier took \t{0:.6f}\tseconds".format(end - start))
-        print('Its accuracy is: {0}%').format(accuracy)
+        print('Its accuracy is: {0}%'.format(accuracy))
 
 
 main()
