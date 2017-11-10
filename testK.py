@@ -82,7 +82,7 @@ def getDistance(x1,y1,z1,x2,y2,z2):
 def main():
     file = os.getcwd() + "/HOFSet.txt"
     file2 = os.getcwd() + "/MediocreSet.txt"
-    file3 = os.getcwd() + "/MillionPitchers.txt"
+    file3 = os.getcwd() + "/test10000k.txt"
     hofPitchers = []
     medPitchers = []
     allPitchers = []
