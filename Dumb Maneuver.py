@@ -66,9 +66,9 @@ def hofData(dataset, std, mean):
 def hofQualify(hofSTD, hofMean, allPitchers, hofResults):
     'Used 1/4 std deviation for top of the elite players'
     for Pitcher in allPitchers:
-        if Pitcher.WHIP >= hofMean[0] - hofSTD[0]/4 and Pitcher.WHIP <= hofMean[0] + hofSTD[0]/4:
-            if Pitcher.FIPminus >= hofMean[1]-hofSTD[1]/4 and Pitcher.FIPminus <= hofMean[1] + hofSTD [1]/4:
-                if Pitcher.ERAminus >= hofMean[2]- hofSTD[2]/4 and Pitcher.ERAminus <= hofMean[2] + hofSTD[2]/4:
+        if Pitcher.WHIP >= hofMean[0] - hofSTD[0] and Pitcher.WHIP <= hofMean[0] + hofSTD[0]:
+            if Pitcher.FIPminus >= hofMean[1]-hofSTD[1] and Pitcher.FIPminus <= hofMean[1] + hofSTD [1]:
+                if Pitcher.ERAminus >= hofMean[2]- hofSTD[2] and Pitcher.ERAminus <= hofMean[2] + hofSTD[2]:
                     hofResults.append(Pitcher.Name)
 
 
@@ -99,21 +99,35 @@ def main():
     hofQualify(hofSTD, hofMean, AllPitchers, newHof)
     endTime = time.time()
     print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    for i in newHof:
+        print(i)
+    newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, thousandPitchers, newHof)
     endTime = time.time()
     print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    for i in newHof:
+        print(i)
+    newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, tenthouPitchers, newHof)
     endTime = time.time()
     print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    for i in newHof:
+        print(i)
+    newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, hunthouPitchers, newHof)
     endTime = time.time()
     print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    for i in newHof:
+        print(i)
+    newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, millionPitchers, newHof)
     endTime = time.time()
     print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    for i in newHof:
+        print(i)
 
 main()
