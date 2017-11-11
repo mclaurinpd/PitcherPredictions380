@@ -83,12 +83,25 @@ def main():
     file = os.getcwd() + "/HOFSet.txt"
     file2 = os.getcwd() + "/MediocreSet.txt"
     file3 = os.getcwd() + "/AllPitcherSet.txt"
+    file4 = os.getcwd() + "/1000Pitchers.txt"
+    file5 = os.getcwd() + "/10000Pitchers.txt"
+    file6 = os.getcwd() + "/100000Pitchers.txt"
+    file7 = os.getcwd() + "/MillionPitchers.txt"
     hofPitchers = []
     medPitchers = []
     allPitchers = []
+    thousandPitchers = []
+    tenthouPitchers = []
+    hunthouPitchers = []
+    millionPitchers = []
     loadData(file, hofPitchers)
     loadData(file2, medPitchers)
     loadData(file3, allPitchers)
+    loadData(file4, thousandPitchers)
+    loadData(file5, tenthouPitchers)
+    loadData(file6, hunthouPitchers)
+    loadData(file7, millionPitchers)
+
     newHOFlist = []
     startTime = time.time()
     for i in allPitchers:
@@ -96,9 +109,43 @@ def main():
         if(neighbor == True):
             newHOFlist.append(i.Name)
     endTime = time.time()
-    print(len(newHOFlist))
-    print("Your new Hall of Fame pitchers are:")
-    print("\n".join(newHOFlist))
     print("And it only took " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+
+    newHOFlist = []
+    startTime = time.time()
+    for i in thousandPitchers:
+        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+        if(neighbor == True):
+            newHOFlist.append(i.Name)
+    endTime = time.time()
+    print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+
+    newHOFlist = []
+    startTime = time.time()
+    for i in tenthouPitchers:
+        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+        if(neighbor == True):
+            newHOFlist.append(i.Name)
+    endTime = time.time()
+    print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+
+    newHOFlist = []
+    startTime = time.time()
+    for i in hunthouPitchers:
+        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+        if(neighbor == True):
+            newHOFlist.append(i.Name)
+    endTime = time.time()
+    print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+
+    newHOFlist = []
+    startTime = time.time()
+    for i in millionPitchers:
+        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+        if(neighbor == True):
+            newHOFlist.append(i.Name)
+    endTime = time.time()
+    print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+
 
 main()
