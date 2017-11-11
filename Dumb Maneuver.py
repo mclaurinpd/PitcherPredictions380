@@ -73,24 +73,40 @@ def hofQualify(hofSTD, hofMean, allPitchers, hofResults):
 
 
 def main():
-    file = os.getcwd() + "/HOFSet.txt"
-    file2 = os.getcwd() + "/AllPitcherSet.txt"
+    file1 = os.getcwd() + "/HOFSet.txt"
+    file2 = os.getcwd() + "/1000Pitchers.txt"
+    file3 = os.getcwd() + "/10000Pitchers.txt"
+    file4 = os.getcwd() + "/100000Pitchers.txt"
+    file5 = os.getcwd() + "/MillionPitchers.txt"
     hofPitchers = []
-    allPitchers = []
+    thousandPitchers = []
+    tenthouPitchers = []
+    hunthouPitchers = []
+    millionPitchers = []
     newHof = []
-    loadData(file, hofPitchers)
-    loadData(file2, allPitchers)
+    loadData(file1, hofPitchers)
+    loadData(file2, thousandPitchers)
+    loadData(file3, tenthouPitchers)
+    loadData(file4, hunthouPitchers)
+    loadData(file5, millionPitchers)
     hofSTD = []
     hofMean = []
+    hofData(hofPitchers, hofSTD, hofMean)
     startTime = time.time()
-    hofData(allPitchers, hofSTD, hofMean)
-    hofQualify(hofSTD, hofMean, allPitchers, newHof)
+    hofQualify(hofSTD, hofMean, thousandPitchers, newHof)
     endTime = time.time()
-    print(len(allPitchers))
-    print(len(newHof))
-    print("Your new Hall of Fame pitchers are:")
-    print("\n".join(newHof))
-    print("And it only took " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-
+    print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    startTime = time.time()
+    hofQualify(hofSTD, hofMean, tenthouPitchers, newHof)
+    endTime = time.time()
+    print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    startTime = time.time()
+    hofQualify(hofSTD, hofMean, hunthouPitchers, newHof)
+    endTime = time.time()
+    print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    startTime = time.time()
+    hofQualify(hofSTD, hofMean, millionPitchers, newHof)
+    endTime = time.time()
+    print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
 
 main()

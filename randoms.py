@@ -4,9 +4,9 @@ def randomword(length):
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(length))
 def main():
-    # fileName = input("Please enter a file name: (with .txt at end) ")
-    # file = open(fileName,'w')
-    for i in range(0,1000000):
+    fileName = input("Please enter a file name: (with .txt at end) ")
+    file = open(fileName,'w')
+    for i in range(0,1000):
         names = randomword(10)
         whip = int((random.normalvariate(1.3,.05) * 100) + 0.5) / 100.0
         if(whip<=1.2):
@@ -19,7 +19,7 @@ def main():
             fip = random.randint(125,150)
             era = random.randint(125,150)
         pitcher = str(str(names)+","+str(whip)+","+str(era)+","+str(fip))
-        print(pitcher)
+       # print(pitcher)
         file.write(pitcher+"\n")
     file.close()
 main()
