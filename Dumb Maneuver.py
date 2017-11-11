@@ -101,6 +101,7 @@ def main():
     print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
     for i in newHof:
         print(i)
+    print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, thousandPitchers, newHof)
@@ -108,6 +109,7 @@ def main():
     print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
     for i in newHof:
         print(i)
+    print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, tenthouPitchers, newHof)
@@ -115,6 +117,7 @@ def main():
     print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
     for i in newHof:
         print(i)
+    print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, hunthouPitchers, newHof)
@@ -122,6 +125,7 @@ def main():
     print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
     for i in newHof:
         print(i)
+    print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, millionPitchers, newHof)
@@ -129,5 +133,6 @@ def main():
     print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
     for i in newHof:
         print(i)
+    print(len(newHof))
 
 main()
