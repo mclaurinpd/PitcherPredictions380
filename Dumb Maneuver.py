@@ -78,27 +78,27 @@ def main():
     file3 = os.getcwd() + "/10000Pitchers.txt"
     file4 = os.getcwd() + "/100000Pitchers.txt"
     file5 = os.getcwd() + "/MillionPitchers.txt"
-    file6 = os.getcwd() + "/AllPitcherSet.txt"
+    file6 = os.getcwd() + "/finalPitchers.txt"
     hofPitchers = []
     thousandPitchers = []
     tenthouPitchers = []
     hunthouPitchers = []
     millionPitchers = []
-    AllPitchers = []
+    finalPitchers = []
     newHof = []
     loadData(file1, hofPitchers)
     loadData(file2, thousandPitchers)
     loadData(file3, tenthouPitchers)
     loadData(file4, hunthouPitchers)
     loadData(file5, millionPitchers)
-    loadData(file6, AllPitchers)
+    loadData(file6, finalPitchers)
     hofSTD = []
     hofMean = []
     hofData(hofPitchers, hofSTD, hofMean)
     startTime = time.time()
-    hofQualify(hofSTD, hofMean, AllPitchers, newHof)
+    hofQualify(hofSTD, hofMean, finalPitchers, newHof)
     endTime = time.time()
-    print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    print("Time for Modern Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
     for i in newHof:
         print(i)
     print(len(newHof))
@@ -107,32 +107,32 @@ def main():
     hofQualify(hofSTD, hofMean, thousandPitchers, newHof)
     endTime = time.time()
     print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-    for i in newHof:
-        print(i)
+    # for i in newHof:
+    #     print(i)
     print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, tenthouPitchers, newHof)
     endTime = time.time()
     print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-    for i in newHof:
-        print(i)
+    # for i in newHof:
+    #     print(i)
     print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, hunthouPitchers, newHof)
     endTime = time.time()
     print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-    for i in newHof:
-        print(i)
+    # for i in newHof:
+    #     print(i)
     print(len(newHof))
     newHof = []
     startTime = time.time()
     hofQualify(hofSTD, hofMean, millionPitchers, newHof)
     endTime = time.time()
     print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-    for i in newHof:
-        print(i)
+    # for i in newHof:
+    #     print(i)
     print(len(newHof))
 
 main()
