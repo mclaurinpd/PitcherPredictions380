@@ -78,17 +78,20 @@ def main():
     file3 = os.getcwd() + "/10000Pitchers.txt"
     file4 = os.getcwd() + "/100000Pitchers.txt"
     file5 = os.getcwd() + "/MillionPitchers.txt"
+    file6 = os.getcwd() + "/AllPitcherSet.txt"
     hofPitchers = []
     thousandPitchers = []
     tenthouPitchers = []
     hunthouPitchers = []
     millionPitchers = []
+    AllPitchers = []
     newHof = []
     loadData(file1, hofPitchers)
     loadData(file2, thousandPitchers)
     loadData(file3, tenthouPitchers)
     loadData(file4, hunthouPitchers)
     loadData(file5, millionPitchers)
+    loadData(file6, AllPitchers)
     hofSTD = []
     hofMean = []
     hofData(hofPitchers, hofSTD, hofMean)
@@ -108,5 +111,8 @@ def main():
     hofQualify(hofSTD, hofMean, millionPitchers, newHof)
     endTime = time.time()
     print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-
+    startTime = time.time()
+    hofQualify(hofSTD, hofMean, AllPitchers, newHof)
+    endTime = time.time()
+    print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
 main()
