@@ -96,6 +96,10 @@ def main():
     hofMean = []
     hofData(hofPitchers, hofSTD, hofMean)
     startTime = time.time()
+    hofQualify(hofSTD, hofMean, AllPitchers, newHof)
+    endTime = time.time()
+    print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    startTime = time.time()
     hofQualify(hofSTD, hofMean, thousandPitchers, newHof)
     endTime = time.time()
     print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
@@ -111,8 +115,5 @@ def main():
     hofQualify(hofSTD, hofMean, millionPitchers, newHof)
     endTime = time.time()
     print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-    startTime = time.time()
-    hofQualify(hofSTD, hofMean, AllPitchers, newHof)
-    endTime = time.time()
-    print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+
 main()

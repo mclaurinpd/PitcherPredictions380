@@ -6,9 +6,9 @@ def randomword(length):
 def main():
     fileName = input("Please enter a file name: (with .txt at end) ")
     file = open(fileName,'w')
-    for i in range(0,1000):
+    for i in range(0,10000):
         names = randomword(10)
-        whip = int((random.normalvariate(1.3,.05) * 100) + 0.5) / 100.0
+        whip = int((random.normalvariate(1.25,.083) * 100) + 0.5) / 100.0
         if(whip<=1.2):
             fip = random.randint(50,75)
             era = random.randint(50,75)

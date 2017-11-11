@@ -70,7 +70,7 @@ def nearestNeighbor(hof,med,test):
     avgDisHOF = disHOF/len(hof)
     avgDisMED = disMED/len(med)
 
-    if((avgDisHOF/4)>avgDisMED):
+    if((avgDisHOF/5.2)>avgDisMED):
         return True
     else:
         return False
@@ -109,43 +109,45 @@ def main():
         if(neighbor == True):
             newHOFlist.append(i.Name)
     endTime = time.time()
-    print("And it only took " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    for i in newHOFlist:
+        print(i)
+    print("Time for All Real Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
 
-    newHOFlist = []
-    startTime = time.time()
-    for i in thousandPitchers:
-        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
-        if(neighbor == True):
-            newHOFlist.append(i.Name)
-    endTime = time.time()
-    print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-
-    newHOFlist = []
-    startTime = time.time()
-    for i in tenthouPitchers:
-        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
-        if(neighbor == True):
-            newHOFlist.append(i.Name)
-    endTime = time.time()
-    print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-
-    newHOFlist = []
-    startTime = time.time()
-    for i in hunthouPitchers:
-        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
-        if(neighbor == True):
-            newHOFlist.append(i.Name)
-    endTime = time.time()
-    print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
-
-    newHOFlist = []
-    startTime = time.time()
-    for i in millionPitchers:
-        neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
-        if(neighbor == True):
-            newHOFlist.append(i.Name)
-    endTime = time.time()
-    print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    # newHOFlist = []
+    # startTime = time.time()
+    # for i in thousandPitchers:
+    #     neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+    #     if(neighbor == True):
+    #         newHOFlist.append(i.Name)
+    # endTime = time.time()
+    # print("Time for 1000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    #
+    # newHOFlist = []
+    # startTime = time.time()
+    # for i in tenthouPitchers:
+    #     neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+    #     if(neighbor == True):
+    #         newHOFlist.append(i.Name)
+    # endTime = time.time()
+    # print("Time for 10000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    #
+    # newHOFlist = []
+    # startTime = time.time()
+    # for i in hunthouPitchers:
+    #     neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+    #     if(neighbor == True):
+    #         newHOFlist.append(i.Name)
+    # endTime = time.time()
+    # print("Time for 100000 Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
+    #
+    # newHOFlist = []
+    # startTime = time.time()
+    # for i in millionPitchers:
+    #     neighbor = nearestNeighbor(hofPitchers,medPitchers,i)
+    #     if(neighbor == True):
+    #         newHOFlist.append(i.Name)
+    # endTime = time.time()
+    # print("Time for 1 Million Pitchers is " + "\t{0:.6f}\tseconds".format(endTime - startTime))
 
 
 main()
